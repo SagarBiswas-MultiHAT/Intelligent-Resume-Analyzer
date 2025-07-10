@@ -1,0 +1,307 @@
+/*
+  styles.css - Resume Analyzer & Builder
+  This file contains all the styles for the web application.
+  Detailed comments are provided for beginners to understand each section and property.
+*/
+
+/*
+  The body selector styles the main page background and layout.
+  - font-family: Sets the default font for the page.
+  - margin/padding: Removes default spacing.
+  - display: flex, flex-direction, align-items, justify-content: Centers content vertically and horizontally.
+  - min-height: Ensures the page takes at least the full viewport height.
+  - background: Adds a gradient background.
+  - animation: Animates the background gradient for a modern look.
+*/
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f4f4f9 100%);
+    animation: gradientBG 12s ease-in-out infinite alternate
+}
+
+/*
+  Keyframes for the animated background gradient.
+*/
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%
+    }
+
+    100% {
+        background-position: 100% 50%
+    }
+}
+
+/*
+  Styles for the main heading (h1).
+  - color, font-size, font-weight: Make the heading stand out.
+  - background-clip and text-fill-color: Create a gradient text effect.
+  - text-decoration: Adds an underline for emphasis.
+*/
+h1 {
+    color: #2d3a4a;
+    margin-top: 40px;
+    font-size: 2.7rem;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 12px #e0e7ff;
+    font-weight: 700;
+    background: linear-gradient(90deg, #007bff 40%, #5a8dee 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: underline;
+    text-decoration-color: #007bff;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px
+}
+
+/*
+  Styles for the file input element.
+  - margin, padding, border, border-radius: Make the input visually appealing.
+  - box-shadow: Adds a subtle shadow for depth.
+  - transition: Smooth border color change on focus.
+*/
+input[type=file] {
+    margin: 30px 0 10px 0;
+    padding: 12px;
+    border: 1.5px solid #bfc9d9;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, .06);
+    font-size: 1rem;
+    transition: border .2s
+}
+
+/*
+  Highlight the file input when focused.
+*/
+input[type=file]:focus {
+    border: 1.5px solid #007bff;
+    outline: none
+}
+
+/*
+  Styles for all buttons.
+  - padding, background, color, border-radius: Make buttons large and modern.
+  - box-shadow: Adds depth.
+  - transition: Smooth hover effect.
+  - margin-left: Adds spacing between buttons.
+*/
+button {
+    padding: 14px 32px;
+    background: linear-gradient(90deg, #007bff 60%, #5a8dee 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, .1);
+    transition: background .3s, transform .2s, box-shadow .2s;
+    letter-spacing: .5px;
+    margin-left: 11px
+}
+
+/*
+  Button hover effect for interactivity.
+*/
+button:hover {
+    background: linear-gradient(90deg, #0056b3 60%, #3a6fd8 100%);
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(44, 62, 80, .18)
+}
+
+/*
+  Special styles for the download button.
+  - Different gradient, hidden by default (display: none).
+  - .show class makes it visible when needed.
+  - SVG icon is aligned with text.
+*/
+.download-btn {
+    background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, .1);
+    display: inline-flex;
+    align-items: center;
+    transition: background .3s, transform .2s, box-shadow .2s;
+    margin-bottom: 14px;
+    margin-left: 10px;
+    letter-spacing: .5px;
+    display: none
+}
+
+.download-btn.show {
+    display: inline-flex
+}
+
+.download-btn svg {
+    margin-right: 8px;
+    vertical-align: middle
+}
+
+/*
+  Styles for the suggestions/results box.
+  - margin, width, background, border-radius: Make it prominent and readable.
+  - box-shadow: Adds depth.
+  - font-size, color: Improves readability.
+  - border: Subtle border for separation.
+  - overflow: Prevents content from spilling out.
+*/
+#suggestions {
+    margin-top: 32px;
+    width: 95%;
+    max-width: 1250px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 6px 32px rgba(44, 62, 80, .13);
+    padding: 36px 28px;
+    text-align: left;
+    font-size: 1.13rem;
+    color: #2d3a4a;
+    min-height: 70px;
+    word-break: break-word;
+    border: 1.5px solid #e0e7ff;
+    position: relative;
+    overflow: hidden
+}
+
+#suggestions h2 {
+    margin-top: 0;
+    color: #007bff;
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+    letter-spacing: .5px
+}
+
+#suggestions pre {
+    background: #f4f4f9;
+    border-radius: 8px;
+    padding: 18px;
+    font-size: 1.05rem;
+    color: #2d3a4a;
+    overflow-x: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-left: 4px solid #007bff22
+}
+
+/*
+  Styles for the AI rating section.
+  - Larger font, colored background, and border for emphasis.
+*/
+.rating-section {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    color: #333;
+    background: linear-gradient(90deg, #e6f0ff 60%, #f4f4f9 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    display: inline-block;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, .04);
+    border-left: 5px solid #007bff;
+    letter-spacing: .5px
+}
+
+.rating-value {
+    color: #007bff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-left: 10px
+}
+
+/*
+  Highlight for example or rewrite lines in suggestions.
+*/
+.example-highlight {
+    background: #e6f7ff;
+    color: #0056b3;
+    border-radius: 5px;
+    padding: 2px 6px;
+    margin: 2px 0;
+    display: inline-block;
+    font-weight: 600
+}
+
+/*
+  Error message styling for user feedback.
+*/
+.error-message {
+    color: #fff;
+    background: #ff4d4f;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    margin-top: 18px;
+    box-shadow: 0 2px 8px rgba(255, 77, 79, .1);
+    max-width: 600px
+}
+
+/*
+  Example section styling for the 10/10 rewritten section.
+*/
+.example-section {
+    background: #f9fbe7;
+    border-left: 5px solid #8bc34a;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 8px rgba(139, 195, 74, .08)
+}
+
+.example-section h3 {
+    color: #689f38;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: .5px
+}
+
+.example-section pre {
+    background: #f4f4f9;
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 1rem;
+    color: #2d3a4a;
+    overflow-x: auto;
+    margin: 0
+}
+
+/*
+  Responsive styles for mobile devices (screen width <= 600px).
+  - Reduces padding and font sizes for better mobile experience.
+*/
+@media (max-width:600px) {
+    body {
+        padding: 10px
+    }
+
+    #suggestions {
+        width: 100%;
+        padding: 18px 6px
+    }
+
+    button {
+        width: 100%;
+        padding: 15px
+    }
+
+    h1 {
+        font-size: 2rem
+    }
+}

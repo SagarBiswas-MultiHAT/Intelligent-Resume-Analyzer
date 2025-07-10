@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+      The <meta charset="UTF-8"> tag sets the character encoding for the document to UTF-8,
+      which includes most characters from all known languages.
+    -->
+    <meta charset="UTF-8">
+    <!--
+      The <meta name="viewport"> tag makes the website responsive on all devices
+      by setting the width to the device's width and the initial zoom level to 1.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+      The <title> tag sets the text shown in the browser tab.
+    -->
+    <title>Intelligent Resume Analyzer & Builder</title>
+    <!--
+      The following meta tags help with SEO (Search Engine Optimization) and social sharing.
+      They describe the page, set keywords, and provide information for social media previews.
+    -->
+    <meta name="description" content="AI-powered Resume Analyzer & Builder. Upload your resume and get actionable suggestions and examples for improvement.">
+    <meta name="keywords" content="resume, analyzer, builder, AI, job, suggestions, improvement, PDF, DOCX">
+    <meta name="author" content="Resume Analyzer Team">
+    <!-- Open Graph meta tags for better sharing on social media platforms -->
+    <meta property="og:title" content="Intelligent Resume Analyzer & Builder">
+    <meta property="og:description" content="Upload your resume and get AI-powered suggestions for improvement.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="favicon.ico">
+    <meta property="og:url" content="">
+    <!-- Twitter Card meta tags for Twitter sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Intelligent Resume Analyzer & Builder">
+    <meta name="twitter:description" content="Upload your resume and get AI-powered suggestions for improvement.">
+    <meta name="twitter:image" content="favicon.ico">
+    <!--
+      The <link rel="icon"> tag sets the favicon (small icon in the browser tab).
+    -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!--
+      The <link rel="stylesheet"> tag links to the external CSS file for styling the page.
+    -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--
+      Main heading of the page.
+    -->
+    <h1>Resume Analyzer & Builder</h1>
+    <!--
+      File input for users to upload their resume. Accepts PDF and DOCX files only.
+      The 'id' is used to access this element in JavaScript.
+    -->
+    <input type="file" id="resumeUpload" accept=".pdf,.docx">
+    <!--
+      Button to trigger the uploadResume() function in JavaScript when clicked.
+      This function should handle the file upload and send it to the backend for analysis.
+    -->
+    <button onclick="uploadResume()">Upload Resume</button>
+    <!--
+      Button to download the analysis results. The SVG inside the button is an icon for visual appeal.
+      The 'id' and 'class' are used for styling and JavaScript access.
+    -->
+    <button id="downloadBtn" class="download-btn">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;"><path d="M10 2v10m0 0l-4-4m4 4l4-4M4 16h12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Download Analysis
+    </button>
+    <!--
+      This div shows a loading message while the resume is being analyzed.
+      It is hidden by default (display:none) and shown via JavaScript when needed.
+    -->
+    <div id="loading" style="display:none; margin-top:20px; color:#007bff; font-weight:bold; margin-left: 20px;">Analyzing resume, please wait...</div>
+    <!--
+      This div will display the suggestions or analysis results from the backend.
+      JavaScript will update its content dynamically.
+    -->
+    <div id="suggestions"></div>
+    <!--
+      The script.js file contains the JavaScript code for handling user interactions,
+      uploading the resume, showing loading messages, and displaying suggestions.
+    -->
+    <script src="script.js"></script>
+</body>
+</html>

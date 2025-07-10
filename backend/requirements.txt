@@ -1,0 +1,5 @@
+Flask
+spacy
+pdfminer.six
+flask-cors
+python-docx
