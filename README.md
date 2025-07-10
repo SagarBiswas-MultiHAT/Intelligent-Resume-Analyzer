@@ -3,7 +3,7 @@
 A modern web application that uses AI to analyze and improve your resume. Upload your resume (PDF or DOCX), get actionable suggestions, and see examples of top-quality resume sections.
 
 <br></br>
-![](https://imgur.com/a/Hec5rlr.png)
+![](https://imgur.com/GhTvY2C.png)
 <br></br>
 
 ---
